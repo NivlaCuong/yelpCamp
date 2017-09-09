@@ -17,10 +17,11 @@ var commentRoutes           = require("./routes/comments"),
     campgroundRoutes        = require("./routes/campgrounds"),
     indexRoutes              = require("./routes/index");
 
-mongoose.Promise = global.Promise;
-// var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
-var url = "mongodb://cuongvqnguyen:Sonofabeach96@ds127044.mlab.com:27044/calvin_yelpcamp";
-mongoose.connect(url);
+mongoose.Promise = Promise;
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(url, {
+    useMongoClient: true,
+});
 
 // seedDB(); // seed the database
 

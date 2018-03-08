@@ -2,7 +2,7 @@ var express     = require("express"),
     passport    = require("passport"),
     User        = require("../models/user"),
     router      = express.Router();
-    
+
 router.get("/", function(req, res) {
     res.render("landing");
 });
@@ -24,8 +24,8 @@ router.post("/register", function(req, res){
                 res.redirect("/campgrounds");
             })
         }
-    })
-})
+    });
+});
 
 // Log in Form
 router.get("/login", function(req, res) {
